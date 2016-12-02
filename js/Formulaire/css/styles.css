@@ -1,0 +1,20 @@
+.container-fluid {
+	margin-left: 20%;
+	margin-right: 20%;
+	padding-left: 10%;
+	padding-right: 10%;
+	background-color: black;
+	color: white;
+}
+
+h1 {
+	text-align: center;
+}
+
+.bouton {
+	background-image:linear-gradient(grey, black);
+}
+
+.alert {
+	color :#ffadad;
+}

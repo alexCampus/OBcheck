@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+
+<html lang="fr">
+<head>
+<meta charset="utf-8" />
+	<title>HobbyShaker</title>
+
+	<!--meta-->
+	<meta name="viewport" content="width=device-width" />
+	<meta name="description" content="CV d'Alexandre De Pembroke">
+	<meta name="author" content="Alexandre De Pembroke">
+
+	<!--meta comptabilité IE-->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="css/bootstrap-theme.min.css">
+	<style>
+		.error {
+			color: red;
+			text-align: center;
+			font-size: 0.9em;
+
+		}
+	</style>
+
+</head>
+<body>
+	<div class="container">
+	
+
+		<!--Form Inscription-->
+	   	<div class="row">
+		   	<div class="col-lg-offset-4 col-lg-4">
+		   		<h2>Inscription</h2>
+			   	<form action="http://campus-numerique-in-the-alps.com/formulaire/index.php" method="post" onSubmit="return verifForm(this)">			   	
+			 	<div class="form-group">
+				 	<label for="nom">Nom:</label>
+				    <input type="text" name="nom" class="form-control" placeholder="Nom"  onBlur="verifNom(this)">
+				    <div class="error"><span id="errorNom"></span></div>
+			 	</div>
+			 	<div class="form-group">
+				 	<label for="prenom">Prenom:</label>
+				    <input type="text" name="prenom" class="form-control" placeholder="Prénom" onBlur="verifPrenom(this)">
+				    <div class="error"><span id="errorPrenom"></span></div>
+			 	</div>			 	
+				<div class="form-group">
+					<label for="">Situation Maritale:</label>
+					<select class="form-control" id="situation" name="situation">
+						<option value="0"></option>
+						<option value="1">Marié(e)</option>
+						<option value="2">Célibataire</option>
+						<option value="3">Pacsé(e)</option>
+						<option value="4">Concubinage</option>
+						<option value="5">Veuf(ve)</option>
+					</select>
+					<div class="error"><span id="errorListe"></span></div>
+				</div>
+				<div class="form-group">
+					<label for="nombreEnfant">Nombres d'Enfants:</label>
+					<label class="radio-inline">
+			  			<input type="radio" name="radio" id="inlineRadio1" value="option1"> 0
+					</label>
+					<label class="radio-inline">
+			  			<input type="radio" name="radio" id="inlineRadio2" value="option2"> 1
+					</label>
+					<label class="radio-inline">
+					  	<input type="radio" name="radio" id="inlineRadio3" value="option3"> 2
+					</label>
+					<label class="radio-inline">
+					  	<input type="radio" name="radio" id="inlineRadio4" value="option4"> + de 3
+					</label>
+					<div class="error"><span id="errorRadio"></span></div>
+				</div>
+			 	<div class="form-group">
+				 	<label for="pseudo">Date de naissance:</label>
+				    <input type="date" name="date" class="form-control" placeholder="Date de naissance" onBlur="verifDate(this)">
+				    <div class="error"><span id="errorDate"></span></div>
+			 	</div>
+			 	<div class="form-group">
+				 	<label for="Numéro de Rue">Numéro rue:</label>
+				    <input type="text" name="nbRue" class="form-control" placeholder="Numéro rue" onBlur="verifCodePostal(this)">
+				    <div class="error"><span id="errorNbRue"></span></div>
+			 	</div>
+			 	<div class="form-group">
+				 	<label for="rue">Nom de rue:</label>
+				    <input type="text" name="rue" class="form-control" placeholder="Nom de rue" onBlur="verifNbRue(this)" >
+				    <div class="error"><span id="errorRue"></span></div>
+			 	</div>
+			 	<div class="form-group">
+				 	<label for="code postal">Code postal:</label>
+				    <input type="text" name="codePostal" class="form-control" placeholder="Code Postal" onBlur="verifCodePostal(this)">
+				    <div class="error"><span id="errorCodePostal"></span></div>
+			 	</div>
+			 	<div class="form-group">
+				 	<label for="ville">Ville:</label>
+				    <input type="text" name="ville" class="form-control" placeholder="Ville" onBlur="verifVille(this)">
+				    <div class="error"><span id="errorVille"></span></div>
+			 	</div>
+			 	<div class="form-group">
+				 	<label for="numero de telephone">Numero de téléphone:</label>
+				    <input type="text" name="telephone" class="form-control" placeholder="0X XX XX XX XX" onBlur="verifTelNumber(this)">
+				    <div class="error"><span id="errorNbTelephone"></span></div>
+			 	</div>
+				<div class="form-group">
+				 	<label for="email">Adresse Email:</label>
+				    <input type="email" name="email" class="form-control" placeholder="email" id="email" onBlur="verifEmail(this)">
+				    <div class="error"><span id="errorEmail"></span></div>
+				</div>
+				<div class="form-group">
+			   	<label for="languages programation">Vos Languages de Programation: (3 choix minimum obligatoire)</label><br>
+				 	<label class="checkbox-inline">
+					  	<input type="checkbox"  class="box" name="box1" value="html"> Html
+					</label>
+					<label class="checkbox-inline">
+					  	<input type="checkbox" class="box" name="box2" value="css"> Css
+					</label>
+					<label class="checkbox-inline">
+					  	<input type="checkbox" class="box" name="box3" value="javascript"> Javascript
+					</label>
+					<label class="checkbox-inline">
+					  	<input type="checkbox" class="box" name="box4" value="java"> Java
+					</label><br>
+					<label class="checkbox-inline">
+					  	<input type="checkbox" class="box" name="box5" value="ruby"> Ruby
+					</label>
+					<label class="checkbox-inline">
+					  	<input type="checkbox" class="box" name="box6" value="php"> PHP
+					</label>
+					<label class="checkbox-inline">
+					  	<input type="checkbox" class="box" name="box7" value="python"> Python
+					</label>
+					<div class="error"><span id="errorCheckBox"></span></div>
+				</div>
+				<div class="form-group">
+				    <label for="pwd">Mot de passe: (au moins 8 caractères contenant une majuscule et un chiffre)</label>
+				    <input type="password" name="password" class="form-control"  placeholder="mot de passe" id="pwd" onBlur="verifPassword(this)">
+				    <div class="error"><span id="errorPassword"></span></div>
+				</div>
+				<div class="form-group">
+				    <label for="pwd">Confirmation Mot de passe:</label>
+				    <input type="password" name="confirmPassword" class="form-control"  placeholder="Confirmation mot de passe" onBlur="verifConfirmPassword(this)">
+				    <div class="error"><span id="errorPasswordConfirm"></span></div>
+				</div>					 
+				  	<input type="submit" name="submit">
+				</form>
+			</div>
+		</div>
+
+
+	    
+		
+	</div>
+
+</body>
+	<script type="text/javascript" src="verifForm.js"></script>
+	
+
+
+</html>

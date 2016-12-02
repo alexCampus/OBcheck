@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<title>Formulaire</title>
+		<meta charset="utf-8">
+	
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+
+	<link rel="stylesheet" href="css/styles.css">
+	<script type="text/javascript" src="js/formulaire.js"></script>
+	</head>
+
+	<body>
+		<div class="container-fluid">
+			<form action="http://campus-numerique-in-the-alps.com/formulaire/index.php" method="post" >
+				<h1>Formulaire d'inscription</h1>
+
+
+				<h3>Genre :</h3>
+
+				<div class="radio">
+					<label for="homme"><input type="radio" name="gender" value="Homme" id="homme">  Homme  </label>
+				</div>
+				<div class="radio">
+					<label for="femme"><input type="radio" name="gender" value="Femme" id="femme">  Femme  </label>
+				</div>
+				<div class="radio">
+					<label for="autre"><input type="radio" name="gender" value="Autre" id="autre">  Autre  </label>
+				</div>
+
+
+				<h3>Données personnelles :</h3>
+
+				<label for="nom">Votre nom :</label>
+				<input type="text" class="form-control" name="nom" id="nom" onblur="nameControle(this)">
+				<div id="alert_nom" class="alert"></div>
+
+				<label for="prenom">Votre prénom :</label>
+				<input type="text" class="form-control" name="prenom" id="prenom" onblur="nameControle(this)">
+				<div id="alert_prenom" class="alert"></div>
+
+				<label for="email">Email:</label>
+				<input id="email" class="form-control" type="email" name="email" onblur="emailControle(this)">  <!-- *@*.*    * out sauf -->
+				<div id="alert_email" class="alert"></div>
+
+				<label for="numtel">Numéro de téléphone :</label>
+				<input id="numtel" class="form-control" name="numtel" type="tel" placeholder="" onblur="numtelControle(this)">	<!-- '+'____* chiffres__' '|'-'|'.'___* chiffres____' '|'-'|'.'_______* chiffres-->
+				<div id="alert_numtel" class="alert"></div>
+
+				<label for="date_de_naissance">Votre date de naissance :</label>	
+				<input id="date_de_naissance" class="form-control" name="date_de_naissance" type="date" onblur="ageControle(this)"> <!--2chiffres/2chiffres/4chiffres-->
+				<div id="alert_age" class="alert"></div>
+
+				<h3>Informations d'identification :</h3>
+
+				<label for="pseudo">Votre pseudo :</label>
+				<input type="text" class="form-control" name="pseudo" id="pseudo" onblur="pseudoControle(this)" />
+				<div id="alert_pseudo" class="alert"></div>
+
+				<label for="motpasse">Votre mot de passe :</label>									<!--Au moins, une minuscule, une majuscule, un chiffre et 8 caractères-->
+				<input type="password" class="form-control" name="motpasse" id="motpasse" onkeypress="mdpControle(this)" onblur="corrMdpControle(this,getElementById('confirmmotpasse'))" /> 
+				<div id="alert_motpasse" class="alert"></div>
+
+
+				<label for="confirmmotpasse">Confirmer votre mot de passe :</label>					<!--Identique à l'autre-->
+				<input type="password" class="form-control" name="confirmmotpasse" id="confirmmotpasse" onblur="corrMdpControle(this, getElementById('motpasse'))" />
+				<div id="alert_confirmmotpasse" class="alert"></div> 
+
+
+				<h3>Comment avez-vous découvert notre site ?</h3>
+				<div class="form-group">
+					<select name="decouvert" size="1" class="form-control">
+						<option>Sélectionner ...</option>
+						<option  value="Connaissance">Par une connaissance</option>
+						<option  value="Recherche_Net">Avec une recherche sur le net</option>
+						<option  value="Pub">Grâce à une pub</option>
+						<option  value="Autres">Autres</option>
+					</select>
+				</div>
+
+
+				<h3>Hobby :</h3>
+
+				<div class="checkbox">
+					<label for="sport"><input type="checkbox" name="sport" id="sport"> Sport</label>
+				</div>
+
+				<div class="checkbox">
+					<label for="musique"><input type="checkbox" name="musique" id="musique"> Musique</label>
+				</div>
+
+				<div class="checkbox">	
+					<label for="animaux"><input type="checkbox" name="animaux" id="animaux"> Animaux</label>
+				</div>
+
+				<div class="checkbox">	
+					<label for="jeux_video"><input type="checkbox" name="jeux_video" id="jeux_video"> Jeux vidéo</label>
+				</div>
+
+				<div class="checkbox">
+					<label for="voyage"><input type="checkbox" name="voyage" id="voyage"> Voyage</label>
+				</div>
+
+				<div class="checkbox">
+					<label for="autres"><input type="checkbox" name="autres" id="autres"> Autres</label>
+				</div>
+
+				
+
+
+				<input class="btn-submit bouton" onclick="verifToutChamp()"" type="submit" name="submit">
+
+			</form>
+			<button class="bouton" name="verif" onclick="verifToutChamp()">Vérification</button>
+		</div>
+
+
+		<!-- Latest compiled and minified JavaScript -->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+	</body>
+</html>
