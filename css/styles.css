@@ -22,7 +22,7 @@ margin-bottom: 5%;
 }
 
 body {
-	background-color:white;
+	background-image:linear-gradient(to bottom, #697B98 ,#FFFFFF 100%);
 	background-size: 100%;
 	background-attachment: fixed;
 }
@@ -246,7 +246,7 @@ background:#596888 ;
 header {
 	margin-bottom: 5%;	
 	border-radius: 8px;
-	background-color: white;
+	background-image:linear-gradient(to bottom, #BDC0C6 ,#fff 100%);
 	min-width: 545px;
 	min-height: 225px;
 }
@@ -351,7 +351,7 @@ iframe{
 	text-align: center;
 	color:#404276;
 	border-radius: 8px;
-	background-color:#F2F2F6 ;
+	background-image:linear-gradient(to bottom, #DEDFE2 ,#fff 100%);
 	margin-bottom: 50px;
 }
 .pseudo_info {
@@ -378,8 +378,8 @@ iframe{
 
 
 .bloc_fil_actu {
-	border:1px solid #ddd;
-	background-color:#F2F2F6;
+	/*border:1px solid #ddd;*/
+	background-image:linear-gradient(to bottom, #D8DADD , ); 
 	border-radius: 8px;
 	min-width: 545px;
 	padding: 2%;
@@ -432,7 +432,7 @@ iframe{
 .contenu_publication {
 	margin-bottom: 4%;
 	font-size: 14pt;
-	background-color: #E7E7EC;
+	background-image:linear-gradient(to bottom, #DEDFE2 ,#fff 100%);
 	border:1px solid #ddd;
 	border-radius: 4px;
 	padding-top: 1.5%;
@@ -448,7 +448,7 @@ iframe{
 }
 .contenu_commentaire {
 	font-size: 12pt;
-	background-color: #E7E7EC;
+	background-image:linear-gradient(to bottom, #DEDFE2 ,#fff 100%);
 	margin-bottom: 4%;
 	border:1px solid #ddd;
 	margin-left: 1%;
@@ -524,7 +524,7 @@ iframe{
 .footer {
 	width: 100%;
 	border:1px solid #ddd;
-	background:#F2F2F6;
+	background-image:linear-gradient(to bottom, #DEDFE2 ,#fff 100%);
 	margin-top: 5%;
 	text-align: center;
 	padding: 1%;
