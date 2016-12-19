@@ -27,6 +27,10 @@
 
 	<link rel="stylesheet" type="text/css" href="css/styles.css">
 	<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+	
+	<!--notification-->
+	<link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="css/msgPop.css">
 
 	<!--Style Plugin Tag -->
 	<link rel="stylesheet" type="text/css" href="css/tag-basic-style.css">
@@ -85,7 +89,7 @@
 				    	<li><a href="user_friends.html">Mes amis</a></li>
 				    	<li><a href="create_event.html">Nouvel évènement</a></li>
 				  	</ul>
-				  	<span class="glyphicon glyphicon-globe notif" aria-hidden="true"><a href="#">Notifications</a></span>
+				  	<span class="glyphicon glyphicon-globe notif" aria-hidden="true" id="notification"><a href="#">Notifications</a></span>
 					<span class="glyphicon glyphicon-envelope notif" aria-hidden="true"><a href="user_messaging.html">Messages</a></span>
 					<a href="index.html" class="btn btn-default btn-logout" role="button">Se déconnecter</a>
 				</div>
@@ -443,6 +447,30 @@
 	
 	<script type="text/javascript">
 		$("#chouchou").tagging();
+	</script>
+
+	<!--plugin notif-->
+	<script src="js/jquery.msgPop.js"></script>
+	<script type="text/javascript">
+		
+			// Set to true to use full width mode
+			MsgPop.displaySmall = true;
+
+			// Custom the postion
+			MsgPop.position = "top-right";
+
+
+
+			// Call the plugin
+			$("#notification").click(function(){
+				var image=$(".img-responsive header_avatar");
+				MsgPop.open({
+					// Options
+					Type:  "success",
+					Content:"<div><img src='images/merlin.jpg'> Merlin à liker votre post</div>",
+					//AutoClose:false,
+				});	
+			});
 	</script>
 
 	<!--Plugin Scroll Up -->
